@@ -11,11 +11,11 @@ import path from 'path';
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGO)
+mongoose.connect(process.env.MONGO,{ useNewUrlParser: true })
 .then(() => console.log('MongoDB is Connected!'))
 .catch(err => console.log(err));
 
-
+console.log(process?.env.MONGO, 'env')
 const __dirname = path.resolve();
 
 const app = express()
