@@ -26,10 +26,7 @@ app.listen(3000, () => {
     console.log("Server is running on port 3000");   
 });
 
-app.get('/test', (req, res) => {
-    res.send("Hello testing");
-});
-
+app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/post", postRoutes);
 app.use("/api/comment", commentRoutes);
@@ -56,4 +53,3 @@ app.use((err, req, res, next) => {
         message,
     });    
 });
-
